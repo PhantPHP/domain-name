@@ -14,6 +14,14 @@ final class DnsRecordTest extends TestCase
 		$this->assertIsArray(
 			(new DnsRecord())
 				->get(
+					'github.com',
+					DnsRecord::A
+				)
+		);
+		
+		$this->assertIsArray(
+			(new DnsRecord())
+				->get(
 					new DomainName('github.com'),
 					DnsRecord::A
 				)
@@ -22,6 +30,14 @@ final class DnsRecordTest extends TestCase
 	
 	public function testExist(): void
 	{
+		$this->assertIsBool(
+			(new DnsRecord())
+				->exist(
+					'github.com',
+					DnsRecord::A
+				)
+		);
+		
 		$this->assertIsBool(
 			(new DnsRecord())
 				->exist(

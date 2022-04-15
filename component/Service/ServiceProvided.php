@@ -11,13 +11,17 @@ use Phant\DataStructure\Web\DomainName;
 
 class ServiceProvided
 {
-	public function isEmailServiceProvider(DomainName $domainName): bool
+	public function isEmailServiceProvider(string|DomainName $domainName): bool
 	{
+		if (is_string($domainName)) $domainName = new DomainName($domainName);
+		
 		return in_array((string)$domainName, EmailServiceProvider::LIST);
 	}
 	
-	public function isTrashMailBoxService(DomainName $domainName): bool
+	public function isTrashMailBoxService(string|DomainName $domainName): bool
 	{
+		if (is_string($domainName)) $domainName = new DomainName($domainName);
+		
 		return in_array((string)$domainName, TrashMailBoxService::LIST);
 	}
 }

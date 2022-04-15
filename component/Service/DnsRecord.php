@@ -41,13 +41,17 @@ class DnsRecord
 		self::ANY	=> \DNS_ANY,
 	];
 	
-	public function get(DomainName $domainName, string $record): ?array
+	public function get(string|DomainName $domainName, string $record): ?array
 	{
+		if (is_string($domainName)) $domainName = new DomainName($domainName);
+		
 		return dns_get_record((string)$domainName, self::STANDARDS[ $record ]) ?? null;
 	}
 	
-	public function exist(DomainName $domainName, string $record): bool
+	public function exist(string|DomainName $domainName, string $record): bool
 	{
+		if (is_string($domainName)) $domainName = new DomainName($domainName);
+		
 		return checkdnsrr((string)$domainName, $record);
 	}
 }

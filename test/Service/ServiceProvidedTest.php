@@ -13,6 +13,11 @@ final class ServiceProvidedTest extends TestCase
 	{
 		$result = (new ServiceProvided())
 			->isEmailServiceProvider(
+				'gmail.com'
+			);
+		
+		$result = (new ServiceProvided())
+			->isEmailServiceProvider(
 				new DomainName('gmail.com')
 			);
 		
@@ -22,6 +27,11 @@ final class ServiceProvidedTest extends TestCase
 	
 	public function testIsEmailServiceProviderFalse(): void
 	{
+		$result = (new ServiceProvided())
+			->isEmailServiceProvider(
+				'trash-mail.com'
+			);
+		
 		$result = (new ServiceProvided())
 			->isEmailServiceProvider(
 				new DomainName('trash-mail.com')
@@ -35,6 +45,11 @@ final class ServiceProvidedTest extends TestCase
 	{
 		$result = (new ServiceProvided())
 			->isTrashMailBoxService(
+				'trash-mail.com'
+			);
+		
+		$result = (new ServiceProvided())
+			->isTrashMailBoxService(
 				new DomainName('trash-mail.com')
 			);
 		
@@ -44,6 +59,11 @@ final class ServiceProvidedTest extends TestCase
 	
 	public function testIsTrashMailBoxServiceFalse(): void
 	{
+		$result = (new ServiceProvided())
+			->isTrashMailBoxService(
+				'gmail.com'
+			);
+		
 		$result = (new ServiceProvided())
 			->isTrashMailBoxService(
 				new DomainName('gmail.com')
