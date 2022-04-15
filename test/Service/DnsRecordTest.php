@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Test\Service;
 use PHPUnit\Framework\TestCase;
 
-use Phant\DomainName\DataStructure\DomainName;
+use Phant\DataStructure\Web\DomainName;
 use Phant\DomainName\Service\DnsRecord;
 
 final class DnsRecordTest extends TestCase

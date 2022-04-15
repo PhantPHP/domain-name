@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "phant/data-structure": "1.*"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.4",

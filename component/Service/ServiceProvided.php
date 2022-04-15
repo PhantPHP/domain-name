@@ -7,7 +7,7 @@ use Phant\DomainName\Data\{
 	EmailServiceProvider,
 	TrashMailBoxService,
 };
-use Phant\DomainName\DataStructure\DomainName;
+use Phant\DataStructure\Web\DomainName;
 
 class ServiceProvided
 {

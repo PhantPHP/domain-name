@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Phant\DomainName\Service;
 
-use Phant\DomainName\DataStructure\DomainName;
+use Phant\DataStructure\Web\DomainName;
 
 class DnsRecord
 {
